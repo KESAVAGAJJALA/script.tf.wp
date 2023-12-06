@@ -4,3 +4,4 @@ added new line
 script
 creating for master and slave
 creating for method4
+slave4-4
