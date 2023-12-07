@@ -77,7 +77,7 @@ resource "aws_route_table_association" "rt2" {
 
 #creating 1st ec2 instance in public subnet
 
-resource "aws_instance" "demoinstance" {
+resource "aws_instance" "instance" {
   ami                         = "ami-0d92749d46e71c34c"
   instance_type               = "t2.micro"
   key_name                    = "master"
