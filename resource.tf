@@ -1,5 +1,5 @@
 provider "aws" {
-  region = "us-east-1"
+  region = "eu-west-2"
   access_key = "AKIAQ5VJERAF4SJAGF52"
   secret_key = "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"
 }
@@ -23,7 +23,7 @@ resource "aws_vpc" "demovpc" {
 resource "aws_subnet" "public-subnet-1" {
   vpc_id            = aws_vpc.demovpc.id
   cidr_block        = var.subnet_cidr
-  availability_zone = "us-east-1a"
+  availability_zone = "eu-west-2a"
   tags = {
     Name = "web subnet 1"
   }
@@ -34,7 +34,7 @@ resource "aws_subnet" "public-subnet-1" {
 resource "aws_subnet" "public-subnet-2" {
   vpc_id            = aws_vpc.demovpc.id
   cidr_block        = var.subnet1_cidr
-  availability_zone = "us-east-1b"
+  availability_zone = "eu-west-2b"
   tags = {
     Name = "web subnet 2"
   }
@@ -80,9 +80,9 @@ resource "aws_route_table_association" "rt2" {
 #creating 1st ec2 instance in public subnet
 
 resource "aws_instance" "instance" {
-  ami                         = "ami-0fa1ca9559f1892ec"
+  ami                         = "ami-09b91b4166e3eda84"
   instance_type               = "t2.micro"
-  key_name                    = "jen"
+  key_name                    = "sar"
   vpc_security_group_ids      = ["${aws_security_group.demosg.id}"]
   subnet_id                   = aws_subnet.public-subnet-1.id
   associate_public_ip_address = true
