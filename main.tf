@@ -78,9 +78,9 @@ resource "aws_route_table_association" "rt2" {
 #creating 1st ec2 instance in public subnet
 
 resource "aws_instance" "instance" {
-  ami                         = "ami-09b91b4166e3eda84"
+  ami                         = "ami-0aa825d61d0d52fa4"
   instance_type               = "t2.micro"
-  key_name                    = "sar"
+  key_name                    = "kesava"
   vpc_security_group_ids      = ["${aws_security_group.demosg.id}"]
   subnet_id                   = aws_subnet.public-subnet-1.id
   associate_public_ip_address = true
