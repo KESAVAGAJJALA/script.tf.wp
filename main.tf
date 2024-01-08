@@ -93,14 +93,6 @@ resource "aws_instance" "instance" {
 }
 
 
-terraform {
-  backend "s3" {
-    bucket = "manka36"
-    key    = "terraform.tfstate"
-    region = "eu-west-2"
-  }
-}
-
 # create security group
 
 resource "aws_security_group" "demosg" {
